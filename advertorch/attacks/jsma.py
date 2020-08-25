@@ -13,6 +13,7 @@ from __future__ import unicode_literals
 
 import numpy as np
 import torch
+import pdb
 
 from advertorch.utils import clamp
 from advertorch.utils import jacobian
@@ -112,6 +113,7 @@ class JacobianSaliencyMapAttack(Attack, LabelMixin):
     def perturb(self, x, y=None):
         x, y = self._verify_and_process_inputs(x, y)
         xadv = x
+        pdb.set_trace()
         batch_size = x.shape[0]
         dim_x = int(np.prod(x.shape[1:]))
         max_iters = int(dim_x * self.gamma / 2)
